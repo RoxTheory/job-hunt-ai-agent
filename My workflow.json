@@ -1,0 +1,101 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "787c9f8d-7a3a-4a5e-b9e3-8f9f8e8f8f8f",
+              "name": "cv_content",
+              "value": "Gustave HENRY Junior Administrateur Système et Cloud  gustave.henry.it@gmail.com  Bruxelles https://www.linkedin.com/in/gustave-henry/ https://github.com/RoxTheory   +33 6 95 86 82 59 Profil Junior Administrateur Cloud, certifié AZ-104, je recherche une activité professionnelle (stage FPIE possible) pour appliquer immédiatement mes connaissances en Windows Server, Linux et virtualisation. Fiable et doté d'un fort sens du service, je suis prêt à contribuer au succès d'une équipe technique. Diplômes et formations Administration Système et Cloud Digital City R. Jules Cockx 6, 1160 Auderghem De juin 2025 à décembre 2025 Acquisition de compétences pratiques en administration système (Windows Server/Linux), virtualisation (Hyper-V) et gestion des infrastructures cloud (Azure). Fondamentaux Window Server Digital City/Irisib Rue Royale 150, 1000 Bruxelles De mai 2025 à juin 2025 Acquisition des bases de Windows Server, avec mise en œuvre d’AD DS et de clusters de basculement pour la haute disponibilité. Initiation réseau et système Digital City/Irisib Rue Royale 150, 1000 Bruxelles D'avril 2025 à mai 2025 Acquisition de compétences fondamentales en administration système et gestion de réseaux informatiques. Maîtrise des installations Windows/Linux, des bases réseaux et des concepts de sécurité. Préformation coding et développement Bruxelles Formation Rue Picard N°11, 1000 Bruxelles De janvier 2025 à avril 2025 Algorithmique et logique de programmation avec Python. Introduction au développement web (HTML, CSS, JavaScript). Expériences professionnelles Commis de cuisine Hankang sarl Rue Saint-Boniface 21, 1050 Ixelles De mars 2017 à juin 2024 Employé polyvalent – Restaurant coréen (2017 – 2023) Gestion des systèmes de caisse informatisés, support technique de premier niveau (Wi-Fi, imprimantes, tablettes), suivi des stocks via outils numériques. Certification Compétences avancées Gestion rigoureuse des infrastructures Résolution de problèmes avec autonomie Gilles Douillet Andrea Pistaceci Français Anglais Espagnol Néerlandais Veille technologique, Labs IT personnels, Cinéma, divers sports, Gaming Informatique AZ-104 AWS Cloud Practitioner (en cours d'acquisition) Administration & Cloud : Active Directory, Hyper-V, VMware, VirtualBox, Zabbix, Guacamole, Apache, Tomcat, MariaDB/MySQL, Windows Server, Linux (Debian, Ubuntu, RHEL). Compétences techniques Maîtrise des environnements virtualisés et des services d'annuaire (Hyper-V, Active Directory), avec une attention particulière aux détails pour garantir la stabilité et la sécurité des systèmes. Capacité à diagnostiquer et à résoudre des incidents techniques de manière indépendante, en utilisant la documentation et les ressources en ligne (manuels, forums) pour optimiser la disponibilité des services. Références Consultant chez Thalès, Red Hat Certified System Administrator (RHCSA) https://be.linkedin.com/in/gilles-douillet68586a Professor and Microsoft Certified Trainer For Business Training Academy, Business Training/European University https://be.linkedin.com/in/apistaceci Langues Langue maternelle B2 Compétence professionel B1 Usage fonctionnel A2 Bases en compréhension et expression",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "91dff57f-ecd5-4afc-84bf-857071eba456",
+      "name": "Mon CV",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -304,
+        -128
+      ]
+    },
+    {
+      "parameters": {
+        "options": {
+          "temperature": 0.3
+        }
+      },
+      "id": "518343f8-897e-47e6-8559-b272241cd821",
+      "name": "Google Gemini",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        0,
+        80
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "KFjdx1WBhl4Os5sk",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "### RÈGLES D'OR (NE PAS DÉPASSER) :\n1. TON NOM EST : Gustave HENRY (Ne jamais utiliser Jean Dupont ou Yassine).\n2. TON ÉDUCATION : Formation chez Digital City (Pas de Master, pas d'Université XYZ).\n3. TES CERTIFS : AZ-104 (UNIQUEMENT). Ne mentionne JAMAIS ITIL ou CCNP.\n4. TON EXPÉRIENCE : Junior System & Cloud. Mentionne ton passage chez Hankang (support IT/Wifi/Caisse) comme preuve de ton sens du service.\n\n### SOURCE DE VÉRITÉ (TON CV) :\n{{ $node[\"Mon CV\"].json.cv_content }}\n\n### OFFRE À ANALYSER :\nSenior Deployment Engineer - Netwerk & Infrastructuur\n \n\nAls Senior Deployment Engineer ben je verantwoordelijk voor de technische implementatie van infrastructuur-, netwerk- en securityoplossingen binnen een enterprise‑omgeving. Jij begeleidt de volledige overgang van Design → Build → Live, en zorgt dat elke oplossing correct gebouwd, gevalideerd en operationeel overdraagbaar is.\n\n \n\nJe werkt nauw samen met Architecture, Project Delivery en Run Operations en neemt ownership tijdens deployment en hypercare.\n\nVerantwoordelijkheden\nEnd‑to‑End Deployment\nOpzetten, configureren en valideren van oplossingen binnen infrastructuur, networking of security.\nUitvoeren van technische implementaties volgens standaarden, security baselines en best practices.\nTesten en documenteren van configuraties voor go-live.\nDocumentatie & Deliverables\nOpleveren van professionele technische documentatie:\nBuild-documentatie\nRunbooks\nConfiguratie‑ en validatieoverzichten\nHandover-rapporten\nUitwerken van “Build‑to‑Run” documentatie voor operations.\nOperational Handover\nUitvoeren van duidelijk gestructureerde kennisoverdrachten aan Run Engineers.\nZorgen dat operationele teams zelfstandig kunnen werken met de nieuwe oplossing.\nL3 Support - Deployment & Hyper‑Care\nAanspreekpunt voor P0/P1‑incidenten tijdens uitrol en stabilisatie.\nNauwe samenwerking met infra-, network- en securityteams om issues snel op te lossen.\nQuality Assurance\nControleren of alle activiteiten voldoen aan bedrijfsstandaarden en securityrichtlijnen.\nTechnische validatie en kwaliteitsborging van elke implementatiestap.\nVereiste ervaring & competenties\n \n\nProfiel\n5-7+ jaar hands‑on ervaring als system engineer, network engineer of deployment engineer.\nRuime ervaring met technische implementaties en enterprise‑omgevingen.\nSterke troubleshooting‑capaciteiten (L3-niveau).\nTechnische vereisten\nDeployment automatisatie:\nAnsible\nTerraform\nNetworking / Security (minstens één domein):\nCisco routing/switching, firewalls, wireless, load balancing\nPalo Alto, Check Point, Fortinet\nInfrastructure:\nWindows/Linux servers\nVMware of andere virtuele platformen\nScripting (Powershell/Python)\nCertificeringen (minstens één)\nCCNP (Enterprise / Security / Data Center)\nAzure of AWS Associate\nITIL Foundation\n \n\n### MISSION :\nRédige une analyse honnête. Si je n'ai pas le niveau pour l'offre, dis-le clairement dans le score de match.\nDans la lettre, mets en avant mon profil \"Junior certifié Azure\" et ma transition de la restauration vers l'IT (preuve de détermination).",
+        "options": {}
+      },
+      "id": "f2ec66f1-aad9-4706-97f4-38abb6abf2c2",
+      "name": "Agent de Recrutement",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [
+        0,
+        -128
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Mon CV": {
+      "main": [
+        [
+          {
+            "node": "Agent de Recrutement",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agent de Recrutement",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "0f23beb7-8bfd-4270-9926-f4ffdf96f68a",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0154be85e3b89764368bdcdb3d6d165e5e9d6f15f35337eca2d8f21f8bf2df5a"
+  },
+  "id": "1XiZrktiGtgNo5fg",
+  "tags": []
+}
