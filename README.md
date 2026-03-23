@@ -1,20 +1,20 @@
-# 🤖 Assistant de Recrutement IA (n8n + Gemini)
+# 🤖 AI Recruitment Assistant (n8n + Gemini)
 
-## 📌 Présentation
-Ce projet est un agent d'automatisation auto-hébergé conçu pour analyser des offres d'emploi et générer des lettres de motivation personnalisées. Il utilise l'IA pour comparer les exigences d'un poste avec mon profil technique réel.
+## 📌 Overview
+This project is a self-hosted automation agent designed to analyze job descriptions and generate tailored cover letters. It leverages AI to compare specific job requirements against my actual technical background and certifications.
 
-## 🛠 Stack Technique
-- **Orchestration :** n8n (Auto-hébergé via Docker)
-- **Modèle d'IA :** Google Gemini 2.5 Flash
-- **Infrastructure :** Docker Desktop sur Windows
-- **Profil Cible :** Junior Administrateur Système & Cloud (Certifié AZ-104)
+## 🛠 Tech Stack
+- **Orchestration:** n8n (Self-hosted via Docker)
+- **AI Model:** Google Gemini 2.5 Flash
+- **Infrastructure:** Docker Desktop on Windows
+- **Target Profile:** Junior System & Cloud Administrator (AZ-104 Certified)
 
-## ⚙️ Fonctionnement
-1. **Entrée :** Je colle le texte d'une offre d'emploi dans l'agent n8n.
-2. **Analyse :** L'agent extrait les compétences clés et les compare à mon CV stocké dans un nœud dédié.
-3. **Sortie :** L'IA génère un score de match, liste les compétences manquantes (pour orienter ma veille) et rédige une lettre de motivation honnête.
+## ⚙️ How it Works
+1. **Input:** Paste a job description into the n8n Agent node.
+2. **Analysis:** The agent extracts key requirements and matches them against my CV stored in a dedicated "Source of Truth" node.
+3. **Output:** The AI generates a match score, identifies skill gaps (to guide my technical watch), and drafts an honest, personalized cover letter.
 
-## 🚀 Apprentissages Clés
-- **Prompt Engineering :** Mise en place de consignes strictes pour éviter les "hallucinations" de l'IA (nom, diplômes, certifications).
-- **Gestion Docker :** Déploiement et persistance des données avec des volumes locaux.
-- **Automatisation Low-Code :** Manipulation des expressions n8n pour lier les nœuds entre eux.
+## 🚀 Key Learnings
+- **Prompt Engineering:** Implemented strict guidelines to prevent AI "hallucinations" regarding identity, degrees, and certifications.
+- **Docker Management:** Deployed and managed data persistence using local volumes.
+- **Low-Code Automation:** Used n8n expressions to dynamically link nodes and automate the decision-making process.
