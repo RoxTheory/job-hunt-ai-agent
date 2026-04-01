@@ -73,9 +73,31 @@ Docker Management: Mastered data persistence and container orchestration.
 
 Low-Code Automation: Used n8n expressions to dynamically link nodes and automate the decision-making process.
 
-📈 Future Roadmap
-[ ] Data Logging: Connect a Google Sheets node to track application history.
+🔄 Evolution of the Scraping Strategy: From Puppeteer to RSS
+1. Implementing Puppeteer & Browserless
+To automate job data collection, we initially integrated Puppeteer connected to a Browserless (Chromium) Docker container.
 
-[ ] Automated Triggering: Implement a URL scraper to analyze job postings directly from a link.
+The Setup: Configured a custom script using the $page object to extract innerText from job postings.
 
-[ ] Skill Gap Analysis: Enhance prompts to generate learning paths for "Senior" roles.
+JSON Analyzer: Added a post-processing node to parse the raw text into a structured JSON format, ensuring the Gemini AI received clean, categorized data (Job Title, Requirements, Description).
+<img width="1237" height="410" alt="FinalWorkflow" src="https://github.com/user-attachments/assets/ad84cc3d-31b9-479e-b890-f63ab7f5d764" />
+
+
+2. The "Navigating Frame Was Detached" Challenge
+During testing on heavy job boards (like ictjob), we encountered a persistent navigating frame was detached error.
+<img width="1870" height="855" alt="navigatingframewasdetached" src="https://github.com/user-attachments/assets/9dda1875-798f-4b3a-bcbe-5c198a0a67ae" />
+
+The Cause: This happens when the website’s internal scripts (ads, trackers, or redirects) refresh or modify the page content while Puppeteer is still trying to hook into it.
+
+Infrastructure Stress: Despite optimizing Docker with shm_size: 2gb and tuning waitUntil parameters, these aggressive anti-bot protections and heavy client-side rendering made the direct scraping approach unstable for a 100% automated daily routine.
+
+3. The Pivot: Shifting to RSS Feeds
+To ensure a "Production-Ready" and lightweight system, we are pivoting the strategy:
+
+New Direction: Instead of raw web scraping, we are now integrating RSS Feeds (Indeed, ICTjob, etc.).
+
+Why RSS? * Reliability: Zero "frame detached" errors.
+
+Efficiency: Extremely low CPU/RAM usage compared to running a headless browser.
+
+Consistency: Data is already semi-structured, making the AI analysis faster and more accurate. 
