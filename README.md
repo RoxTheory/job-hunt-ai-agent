@@ -101,3 +101,17 @@ Why RSS? * Reliability: Zero "frame detached" errors.
 Efficiency: Extremely low CPU/RAM usage compared to running a headless browser.
 
 Consistency: Data is already semi-structured, making the AI analysis faster and more accurate. 
+
+Why Free Job Board Scraping Doesn't Work in Belgium (2025)
+After extensive testing, here's the reality of automating job search data retrieval from Belgian job boards:
+What We Tried
+MethodSiteResultPuppeteerICTJob❌ "navigating frame was detached"RSS FeedICTJob❌ URL doesn't existRSS FeedIndeed BE❌ 404 - page not foundRSS FeedWelcome to the Jungle❌ No XML returnedRSS FeedStepstone BE❌ 403 - access deniedRSS FeedJobat❌ 0 results returnedDirect APIIndeed❌ 403 - Forbidden
+Why It Fails
+Belgian and European job boards have aggressively locked down free data access since ~2022. Their business model relies on paid API access or recruiter subscriptions. They actively block:
+
+Headless browsers (Puppeteer/Playwright)
+RSS feed scraping
+Unauthorized HTTP requests
+
+The Only Free Workaround
+Use native job alert emails from each platform → trigger an n8n Gmail workflow → enrich with an LLM. No scraping, no blocking, fully legal.
